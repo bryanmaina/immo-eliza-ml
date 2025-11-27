@@ -213,3 +213,6 @@ outputs/
 .idea
 downloaded_files
 .vscode/launch.json
+
+# MLflow
+mlruns/

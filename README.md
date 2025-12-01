@@ -37,15 +37,6 @@ This project is a machine learning pipeline for predicting property prices based
 
 There are two main ways to run the project: using the DVC pipeline or running the training script directly.
 
-### Running the DVC Pipeline
-
-This is the recommended way to reproduce the full pipeline, from data preprocessing to model training.
-
-```bash
-dvc repro
-```
-This command will execute the stages defined in `dvc.yaml`.
-
 ### Running Training Directly
 
 You can run the training process directly to experiment with different models and parameters. This script will train multiple models, log them to MLflow, and register the best one.

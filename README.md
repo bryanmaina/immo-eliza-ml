@@ -33,11 +33,6 @@ This project is a machine learning pipeline for predicting property prices based
     pip install -r src/requirements.txt
     ```
 
-4.  **Pull data from DVC storage:**
-    ```bash
-    dvc pull
-    ```
-
 ## Usage
 
 There are two main ways to run the project: using the DVC pipeline or running the training script directly.

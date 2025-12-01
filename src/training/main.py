@@ -1,6 +1,7 @@
 import os
 import subprocess
 import time
+from pathlib import Path
 
 import dvc.api
 import joblib
@@ -41,7 +42,7 @@ def train_and_log_models():
     # -------------------------------------------------------------------------
     # 2. Data Loading, Preprocessing, and Splitting
     # -------------------------------------------------------------------------
-    raw_data_path = "data/raw/data.csv"
+    raw_data_path = os.path.join("data", "raw", "data.csv")
     print(f"Loading raw data from {raw_data_path}")
 
     X_processed_df = None
@@ -156,11 +157,11 @@ def train_and_log_models():
     # -------------------------------------------------------------------------
     # 5. Save and Log the Preprocessing Pipeline to be used for prediction
     # -------------------------------------------------------------------------
-    model_dir = "model"
+    model_dir = Path("model")
     os.makedirs(model_dir, exist_ok=True)
-    pipeline_path = f"{model_dir}/preprocessing_pipeline.pkl"
+    pipeline_path = model_dir / "preprocessing_pipeline.pkl"
     joblib.dump(preprocessing_pipeline, pipeline_path)
-    log_artifact(pipeline_path, "preprocessing")
+    log_artifact(str(pipeline_path), "preprocessing")
 
     print("MLflow run ended.")
 

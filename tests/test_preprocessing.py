@@ -342,10 +342,10 @@ def test_winsorization_outlier_handling(sample_raw_data):
     upper_bound = winsorizer.upper_bounds["total_area_sqm"]
 
     assert all(X_processed[processed_total_area_col] >= lower_bound - 1e-9), (
-        f"Values should be capped at lower bound."
+        "Values should be capped at lower bound."
     )
     assert all(X_processed[processed_total_area_col] <= upper_bound + 1e-9), (
-        f"Values should be capped at upper bound."
+        "Values should be capped at upper bound."
     )
 
 
